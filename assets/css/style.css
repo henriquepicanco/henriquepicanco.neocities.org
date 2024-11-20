@@ -28,17 +28,30 @@ body {
 }
 
 .star {
-  width: 70vh;
-  height: 70vh;
+  width: 50vh;
+  height: 50vh;
   background-image: linear-gradient(to left, yellow, orange);
-  animation: star 5s infinite linear;
+  animation: star 60s infinite linear;
+  position: relative;
+}
+
+.star:after {
+  content: "";
+  display: block;
+  border: 0.125vh solid #FFFFFFCC;
+  width: 80vh;
+  height: 80vh;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 100%;
 }
 
 .planet {
-  width: 30vh;
-  height: 30vh;
-  background-image: linear-gradient(to left, blue, lightblue);
-  animation: planet 5s infinite linear;
+  z-index: 1;
+  width: 25vh;
+  height: 25vh;
+  background-image: linear-gradient(90deg, lightgray, gray);
+  animation: planet 60s infinite linear ;
   box-shadow: 0rem 0rem 5rem black;
 }
 
@@ -56,12 +69,12 @@ body {
 
 @keyframes planet {
   0% {
-    transform: rotate(0deg) translateX(-100%);
+    transform: rotate(0deg) translateX(-40vh);
   }
   50% {
-    transform: rotate(180deg) translateX(-100%);
+    transform: rotate(180deg) translateX(-40vh);
   }
   100% {
-    transform: rotate(360deg) translateX(-100%);
+    transform: rotate(360deg) translateX(-40vh);
   }
 }
